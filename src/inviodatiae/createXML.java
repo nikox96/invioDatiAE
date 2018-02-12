@@ -165,7 +165,7 @@ public class createXML {
 
         initializeVar();
 
-        jaxbContext = JAXBContext.newInstance("inviodatiae.xsd.it.gov.agenziaentrate.ivaservizi.docs.xsd.fatture.v2");
+        jaxbContext = JAXBContext.newInstance("inviodatiae.xsd");
         marshaller = jaxbContext.createMarshaller();
         //marshaller.setSchema(schema);
 
