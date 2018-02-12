@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -70,7 +70,7 @@ public class ReferenceType {
     protected String type;
 
     /**
-     * Recupera il valore della proprietà transforms.
+     * Recupera il valore della proprietï¿½ transforms.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class ReferenceType {
     }
 
     /**
-     * Imposta il valore della proprietà transforms.
+     * Imposta il valore della proprietï¿½ transforms.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class ReferenceType {
     }
 
     /**
-     * Recupera il valore della proprietà digestMethod.
+     * Recupera il valore della proprietï¿½ digestMethod.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class ReferenceType {
     }
 
     /**
-     * Imposta il valore della proprietà digestMethod.
+     * Imposta il valore della proprietï¿½ digestMethod.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class ReferenceType {
     }
 
     /**
-     * Recupera il valore della proprietà digestValue.
+     * Recupera il valore della proprietï¿½ digestValue.
      * 
      * @return
      *     possible object is
@@ -129,7 +129,7 @@ public class ReferenceType {
     }
 
     /**
-     * Imposta il valore della proprietà digestValue.
+     * Imposta il valore della proprietï¿½ digestValue.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class ReferenceType {
     }
 
     /**
-     * Recupera il valore della proprietà id.
+     * Recupera il valore della proprietï¿½ id.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class ReferenceType {
     }
 
     /**
-     * Imposta il valore della proprietà id.
+     * Imposta il valore della proprietï¿½ id.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +164,7 @@ public class ReferenceType {
     }
 
     /**
-     * Recupera il valore della proprietà uri.
+     * Recupera il valore della proprietï¿½ uri.
      * 
      * @return
      *     possible object is
@@ -176,7 +176,7 @@ public class ReferenceType {
     }
 
     /**
-     * Imposta il valore della proprietà uri.
+     * Imposta il valore della proprietï¿½ uri.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +188,7 @@ public class ReferenceType {
     }
 
     /**
-     * Recupera il valore della proprietà type.
+     * Recupera il valore della proprietï¿½ type.
      * 
      * @return
      *     possible object is
@@ -200,7 +200,7 @@ public class ReferenceType {
     }
 
     /**
-     * Imposta il valore della proprietà type.
+     * Imposta il valore della proprietï¿½ type.
      * 
      * @param value
      *     allowed object is

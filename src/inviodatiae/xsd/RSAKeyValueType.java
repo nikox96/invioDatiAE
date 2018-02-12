@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -47,7 +47,7 @@ public class RSAKeyValueType {
     protected byte[] exponent;
 
     /**
-     * Recupera il valore della proprietà modulus.
+     * Recupera il valore della proprietï¿½ modulus.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class RSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà modulus.
+     * Imposta il valore della proprietï¿½ modulus.
      * 
      * @param value
      *     allowed object is
@@ -69,7 +69,7 @@ public class RSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà exponent.
+     * Recupera il valore della proprietï¿½ exponent.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class RSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà exponent.
+     * Imposta il valore della proprietï¿½ exponent.
      * 
      * @param value
      *     allowed object is

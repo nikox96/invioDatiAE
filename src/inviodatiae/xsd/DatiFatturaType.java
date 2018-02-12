@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -65,7 +65,7 @@ public class DatiFatturaType {
     protected VersioneType versione;
 
     /**
-     * Recupera il valore della proprietà datiFatturaHeader.
+     * Recupera il valore della proprietï¿½ datiFatturaHeader.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Imposta il valore della proprietà datiFatturaHeader.
+     * Imposta il valore della proprietï¿½ datiFatturaHeader.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +89,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Recupera il valore della proprietà dte.
+     * Recupera il valore della proprietï¿½ dte.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Imposta il valore della proprietà dte.
+     * Imposta il valore della proprietï¿½ dte.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Recupera il valore della proprietà dtr.
+     * Recupera il valore della proprietï¿½ dtr.
      * 
      * @return
      *     possible object is
@@ -125,7 +125,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Imposta il valore della proprietà dtr.
+     * Imposta il valore della proprietï¿½ dtr.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +137,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Recupera il valore della proprietà ann.
+     * Recupera il valore della proprietï¿½ ann.
      * 
      * @return
      *     possible object is
@@ -149,7 +149,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Imposta il valore della proprietà ann.
+     * Imposta il valore della proprietï¿½ ann.
      * 
      * @param value
      *     allowed object is
@@ -161,7 +161,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Recupera il valore della proprietà signature.
+     * Recupera il valore della proprietï¿½ signature.
      * 
      * @return
      *     possible object is
@@ -173,7 +173,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Imposta il valore della proprietà signature.
+     * Imposta il valore della proprietï¿½ signature.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +185,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Recupera il valore della proprietà versione.
+     * Recupera il valore della proprietï¿½ versione.
      * 
      * @return
      *     possible object is
@@ -197,7 +197,7 @@ public class DatiFatturaType {
     }
 
     /**
-     * Imposta il valore della proprietà versione.
+     * Imposta il valore della proprietï¿½ versione.
      * 
      * @param value
      *     allowed object is

@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -52,7 +52,7 @@ public class IdFiscaleType {
     protected String idCodice;
 
     /**
-     * Recupera il valore della proprietà idPaese.
+     * Recupera il valore della proprietï¿½ idPaese.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class IdFiscaleType {
     }
 
     /**
-     * Imposta il valore della proprietà idPaese.
+     * Imposta il valore della proprietï¿½ idPaese.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class IdFiscaleType {
     }
 
     /**
-     * Recupera il valore della proprietà idCodice.
+     * Recupera il valore della proprietï¿½ idCodice.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class IdFiscaleType {
     }
 
     /**
-     * Imposta il valore della proprietà idCodice.
+     * Imposta il valore della proprietï¿½ idCodice.
      * 
      * @param value
      *     allowed object is

@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -64,7 +64,7 @@ public class DatiFatturaHeaderType {
     protected String spazioDatiFattura;
 
     /**
-     * Recupera il valore della proprietà progressivoInvio.
+     * Recupera il valore della proprietï¿½ progressivoInvio.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Imposta il valore della proprietà progressivoInvio.
+     * Imposta il valore della proprietï¿½ progressivoInvio.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Recupera il valore della proprietà dichiarante.
+     * Recupera il valore della proprietï¿½ dichiarante.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Imposta il valore della proprietà dichiarante.
+     * Imposta il valore della proprietï¿½ dichiarante.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Recupera il valore della proprietà idSistema.
+     * Recupera il valore della proprietï¿½ idSistema.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Imposta il valore della proprietà idSistema.
+     * Imposta il valore della proprietï¿½ idSistema.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +136,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Recupera il valore della proprietà spazioDatiFattura.
+     * Recupera il valore della proprietï¿½ spazioDatiFattura.
      * 
      * @return
      *     possible object is
@@ -148,7 +148,7 @@ public class DatiFatturaHeaderType {
     }
 
     /**
-     * Imposta il valore della proprietà spazioDatiFattura.
+     * Imposta il valore della proprietï¿½ spazioDatiFattura.
      * 
      * @param value
      *     allowed object is

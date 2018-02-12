@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,12 +64,12 @@ public class PGPDataType {
      * Recupera il resto del modello di contenuto. 
      * 
      * <p>
-     * Questa proprietà "catch-all" viene recuperata per il seguente motivo: 
-     * Il nome di campo "PGPKeyPacket" è usato da due diverse parti di uno schema. Vedere: 
+     * Questa proprietï¿½ "catch-all" viene recuperata per il seguente motivo: 
+     * Il nome di campo "PGPKeyPacket" ï¿½ usato da due diverse parti di uno schema. Vedere: 
      * riga 218 di http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd
      * riga 213 di http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd
      * <p>
-     * Per eliminare questa proprietà, applicare una personalizzazione della proprietà a una 
+     * Per eliminare questa proprietï¿½, applicare una personalizzazione della proprietï¿½ a una 
      * delle seguenti due dichiarazioni per modificarne il nome: 
      * Gets the value of the content property.
      * 

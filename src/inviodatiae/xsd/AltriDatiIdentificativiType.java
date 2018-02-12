@@ -1,13 +1,14 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
+import inviodatiae.xsd.IndirizzoType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,7 +73,7 @@ public class AltriDatiIdentificativiType {
     protected RappresentanteFiscaleType rappresentanteFiscale;
 
     /**
-     * Recupera il valore della proprietà denominazione.
+     * Recupera il valore della proprietï¿½ denominazione.
      * 
      * @return
      *     possible object is
@@ -84,7 +85,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Imposta il valore della proprietà denominazione.
+     * Imposta il valore della proprietï¿½ denominazione.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +97,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Recupera il valore della proprietà nome.
+     * Recupera il valore della proprietï¿½ nome.
      * 
      * @return
      *     possible object is
@@ -108,7 +109,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Imposta il valore della proprietà nome.
+     * Imposta il valore della proprietï¿½ nome.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +121,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Recupera il valore della proprietà cognome.
+     * Recupera il valore della proprietï¿½ cognome.
      * 
      * @return
      *     possible object is
@@ -132,7 +133,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Imposta il valore della proprietà cognome.
+     * Imposta il valore della proprietï¿½ cognome.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +145,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Recupera il valore della proprietà sede.
+     * Recupera il valore della proprietï¿½ sede.
      * 
      * @return
      *     possible object is
@@ -156,7 +157,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Imposta il valore della proprietà sede.
+     * Imposta il valore della proprietï¿½ sede.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +169,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Recupera il valore della proprietà stabileOrganizzazione.
+     * Recupera il valore della proprietï¿½ stabileOrganizzazione.
      * 
      * @return
      *     possible object is
@@ -180,7 +181,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Imposta il valore della proprietà stabileOrganizzazione.
+     * Imposta il valore della proprietï¿½ stabileOrganizzazione.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +193,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Recupera il valore della proprietà rappresentanteFiscale.
+     * Recupera il valore della proprietï¿½ rappresentanteFiscale.
      * 
      * @return
      *     possible object is
@@ -204,7 +205,7 @@ public class AltriDatiIdentificativiType {
     }
 
     /**
-     * Imposta il valore della proprietà rappresentanteFiscale.
+     * Imposta il valore della proprietï¿½ rappresentanteFiscale.
      * 
      * @param value
      *     allowed object is

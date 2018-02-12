@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -68,7 +68,7 @@ public class DatiRiepilogoType {
     protected EsigibilitaIVAType esigibilitaIVA;
 
     /**
-     * Recupera il valore della proprietà imponibileImporto.
+     * Recupera il valore della proprietï¿½ imponibileImporto.
      * 
      * @return
      *     possible object is
@@ -80,7 +80,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Imposta il valore della proprietà imponibileImporto.
+     * Imposta il valore della proprietï¿½ imponibileImporto.
      * 
      * @param value
      *     allowed object is
@@ -92,7 +92,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Recupera il valore della proprietà datiIVA.
+     * Recupera il valore della proprietï¿½ datiIVA.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Imposta il valore della proprietà datiIVA.
+     * Imposta il valore della proprietï¿½ datiIVA.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +116,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Recupera il valore della proprietà natura.
+     * Recupera il valore della proprietï¿½ natura.
      * 
      * @return
      *     possible object is
@@ -128,7 +128,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Imposta il valore della proprietà natura.
+     * Imposta il valore della proprietï¿½ natura.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Recupera il valore della proprietà detraibile.
+     * Recupera il valore della proprietï¿½ detraibile.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Imposta il valore della proprietà detraibile.
+     * Imposta il valore della proprietï¿½ detraibile.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +164,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Recupera il valore della proprietà deducibile.
+     * Recupera il valore della proprietï¿½ deducibile.
      * 
      * @return
      *     possible object is
@@ -176,7 +176,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Imposta il valore della proprietà deducibile.
+     * Imposta il valore della proprietï¿½ deducibile.
      * 
      * @param value
      *     allowed object is
@@ -188,7 +188,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Recupera il valore della proprietà esigibilitaIVA.
+     * Recupera il valore della proprietï¿½ esigibilitaIVA.
      * 
      * @return
      *     possible object is
@@ -200,7 +200,7 @@ public class DatiRiepilogoType {
     }
 
     /**
-     * Imposta il valore della proprietà esigibilitaIVA.
+     * Imposta il valore della proprietï¿½ esigibilitaIVA.
      * 
      * @param value
      *     allowed object is

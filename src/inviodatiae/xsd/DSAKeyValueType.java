@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -71,7 +71,7 @@ public class DSAKeyValueType {
     protected byte[] pgenCounter;
 
     /**
-     * Recupera il valore della proprietà p.
+     * Recupera il valore della proprietï¿½ p.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà p.
+     * Imposta il valore della proprietï¿½ p.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +93,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà q.
+     * Recupera il valore della proprietï¿½ q.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà q.
+     * Imposta il valore della proprietï¿½ q.
      * 
      * @param value
      *     allowed object is
@@ -115,7 +115,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà g.
+     * Recupera il valore della proprietï¿½ g.
      * 
      * @return
      *     possible object is
@@ -126,7 +126,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà g.
+     * Imposta il valore della proprietï¿½ g.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +137,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà y.
+     * Recupera il valore della proprietï¿½ y.
      * 
      * @return
      *     possible object is
@@ -148,7 +148,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà y.
+     * Imposta il valore della proprietï¿½ y.
      * 
      * @param value
      *     allowed object is
@@ -159,7 +159,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà j.
+     * Recupera il valore della proprietï¿½ j.
      * 
      * @return
      *     possible object is
@@ -170,7 +170,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà j.
+     * Imposta il valore della proprietï¿½ j.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +181,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà seed.
+     * Recupera il valore della proprietï¿½ seed.
      * 
      * @return
      *     possible object is
@@ -192,7 +192,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà seed.
+     * Imposta il valore della proprietï¿½ seed.
      * 
      * @param value
      *     allowed object is
@@ -203,7 +203,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Recupera il valore della proprietà pgenCounter.
+     * Recupera il valore della proprietï¿½ pgenCounter.
      * 
      * @return
      *     possible object is
@@ -214,7 +214,7 @@ public class DSAKeyValueType {
     }
 
     /**
-     * Imposta il valore della proprietà pgenCounter.
+     * Imposta il valore della proprietï¿½ pgenCounter.
      * 
      * @param value
      *     allowed object is

@@ -5,6 +5,8 @@
  */
 package inviodatiae;
 
+import inviodatiae.xsd.DatiFatturaBodyDTEType;
+import inviodatiae.xsd.IndirizzoType;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -55,28 +57,28 @@ public class createXML {
     static IdentificativiFiscaliITType idenFisCed;
     static IdFiscaleITType idFisCed;
 
-    static AltriDatiIdentificativiNoSedeType idenAltriCed;
+    static AltriDatiIdentificativiITType idenAltriCed;
 
     static IndirizzoType indCedSede;
     static IndirizzoType indCedStabOrg;
     static RappresentanteFiscaleITType cedRappFis;
-    static IdFiscaleITIvaType idFisCedRappFis;
+    static IdFiscaleITType idFisCedRappFis;
 
     static CessionarioCommittenteDTEType dteCess;
 
     static IdentificativiFiscaliNoIVAType idenFisCess;
     static IdFiscaleType idFisCess;
 
-    static AltriDatiIdentificativiNoCAPType idenAltriCess;
+    static AltriDatiIdentificativiType idenAltriCess;
 
-    static IndirizzoNoCAPType indCessSede;
+    static IndirizzoType indCessSede;
     static IndirizzoType indCessStabOrg;
     static RappresentanteFiscaleType cessRappFis;
     static IdFiscaleType idFisCessRappFis;
 
     static DatiFatturaBodyDTEType datiFatBodyDTE;
 
-    static DatiGeneraliType datiGenDTE;
+    static DatiGeneraliDTEType datiGenDTE;
     static DatiRiepilogoType datiRiepilogoDTE;
 
     static DatiIVAType datiIvaDTE;
@@ -90,9 +92,9 @@ public class createXML {
     static IdentificativiFiscaliType idenFisCedDTR;
     static IdFiscaleType idFisCedDTR;
 
-    static AltriDatiIdentificativiNoCAPType idenAltriCedDTR;
+    static AltriDatiIdentificativiType idenAltriCedDTR;
 
-    static IndirizzoNoCAPType indCedSedeDTR;
+    static IndirizzoType indCedSedeDTR;
     static IndirizzoType indCedStabOrgDTR;
     static RappresentanteFiscaleType cedRappFisDTR;
     static IdFiscaleType idFisCedRappFisDTR;
@@ -102,12 +104,12 @@ public class createXML {
     static IdentificativiFiscaliITType idenFisCessDTR;
     static IdFiscaleITType idFisCessDTR;
 
-    static AltriDatiIdentificativiNoSedeType idenAltriCessDTR;
+    static AltriDatiIdentificativiITType idenAltriCessDTR;
 
     static IndirizzoType indCessSedeDTR;
     static IndirizzoType indCessStabOrgDTR;
     static RappresentanteFiscaleITType cessRappFisDTR;
-    static IdFiscaleITIvaType idFisCessRappFisDTR;
+    static IdFiscaleITType idFisCessRappFisDTR;
 
     static DatiFatturaBodyDTRType datiFatBodyDTR;
 
@@ -293,28 +295,28 @@ public class createXML {
         idenFisCed = xml.createIdentificativiFiscaliITType();
         idFisCed = xml.createIdFiscaleITType();
 
-        idenAltriCed = xml.createAltriDatiIdentificativiNoSedeType();
+        idenAltriCed = xml.createAltriDatiIdentificativiITType();
 
         indCedSede = xml.createIndirizzoType();
         indCedStabOrg = xml.createIndirizzoType();
         cedRappFis = xml.createRappresentanteFiscaleITType();
-        idFisCedRappFis = xml.createIdFiscaleITIvaType();
+        idFisCedRappFis = xml.createIdFiscaleITType();
 
         dteCess = xml.createCessionarioCommittenteDTEType();
 
         idenFisCess = xml.createIdentificativiFiscaliNoIVAType();
         idFisCess = xml.createIdFiscaleType();
 
-        idenAltriCess = xml.createAltriDatiIdentificativiNoCAPType();
+        idenAltriCess = xml.createAltriDatiIdentificativiType();
 
-        indCessSede = xml.createIndirizzoNoCAPType();
+        indCessSede = xml.createIndirizzoType();
         indCessStabOrg = xml.createIndirizzoType();
         cessRappFis = xml.createRappresentanteFiscaleType();
         idFisCessRappFis = xml.createIdFiscaleType();
 
         datiFatBodyDTE = xml.createDatiFatturaBodyDTEType();
 
-        datiGenDTE = xml.createDatiGeneraliType();
+        datiGenDTE = xml.createDatiGeneraliDTEType();
         datiRiepilogoDTE = xml.createDatiRiepilogoType();
 
         datiIvaDTE = xml.createDatiIVAType();
@@ -328,9 +330,9 @@ public class createXML {
         idenFisCedDTR = xml.createIdentificativiFiscaliType();
         idFisCedDTR = xml.createIdFiscaleType();
 
-        idenAltriCedDTR = xml.createAltriDatiIdentificativiNoCAPType();
+        idenAltriCedDTR = xml.createAltriDatiIdentificativiType();
 
-        indCedSedeDTR = xml.createIndirizzoNoCAPType();
+        indCedSedeDTR = xml.createIndirizzoType();
         indCedStabOrgDTR = xml.createIndirizzoType();
         cedRappFisDTR = xml.createRappresentanteFiscaleType();
         idFisCedRappFisDTR = xml.createIdFiscaleType();
@@ -340,12 +342,12 @@ public class createXML {
         idenFisCessDTR = xml.createIdentificativiFiscaliITType();
         idFisCessDTR = xml.createIdFiscaleITType();
 
-        idenAltriCessDTR = xml.createAltriDatiIdentificativiNoSedeType();
+        idenAltriCessDTR = xml.createAltriDatiIdentificativiITType();
 
         indCessSedeDTR = xml.createIndirizzoType();
         indCessStabOrgDTR = xml.createIndirizzoType();
         cessRappFisDTR = xml.createRappresentanteFiscaleITType();
-        idFisCessRappFisDTR = xml.createIdFiscaleITIvaType();
+        idFisCessRappFisDTR = xml.createIdFiscaleITType();
 
         datiFatBodyDTR = xml.createDatiFatturaBodyDTRType();
 
@@ -422,8 +424,13 @@ public class createXML {
                     dic.setCarica(Integer.parseInt(index[1]));
                     break;
                 case "1.3":
-                    header.setIdSistema(index[1]);
+                    //v2.1 da non valorizzare header.setIdSistema(index[1]);
                     break;
+                //v2.1-inizio
+                case "1.4":
+                    //spazio dati fattura campo di sistema (da non valorizzare)
+                    break;
+                //v2.1-fine
                 case "2.1.1.1.1":
                     idFisCed.setIdPaese(NazioneITType.valueOf(index[1]));
                     break;
@@ -826,28 +833,28 @@ public class createXML {
         idenFisCed = xml.createIdentificativiFiscaliITType();
         idFisCed = xml.createIdFiscaleITType();
 
-        idenAltriCed = xml.createAltriDatiIdentificativiNoSedeType();
+        idenAltriCed = xml.createAltriDatiIdentificativiITType();
 
         indCedSede = xml.createIndirizzoType();
         indCedStabOrg = xml.createIndirizzoType();
         cedRappFis = xml.createRappresentanteFiscaleITType();
-        idFisCedRappFis = xml.createIdFiscaleITIvaType();
+        idFisCedRappFis = xml.createIdFiscaleITType();
 
         dteCess = xml.createCessionarioCommittenteDTEType();
 
         idenFisCess = xml.createIdentificativiFiscaliNoIVAType();
         idFisCess = xml.createIdFiscaleType();
 
-        idenAltriCess = xml.createAltriDatiIdentificativiNoCAPType();
+        idenAltriCess = xml.createAltriDatiIdentificativiType();
 
-        indCessSede = xml.createIndirizzoNoCAPType();
+        indCessSede = xml.createIndirizzoType();
         indCessStabOrg = xml.createIndirizzoType();
         cessRappFis = xml.createRappresentanteFiscaleType();
         idFisCessRappFis = xml.createIdFiscaleType();
 
         datiFatBodyDTE = xml.createDatiFatturaBodyDTEType();
 
-        datiGenDTE = xml.createDatiGeneraliType();
+        datiGenDTE = xml.createDatiGeneraliDTEType();
         datiRiepilogoDTE = xml.createDatiRiepilogoType();
 
         datiIvaDTE = xml.createDatiIVAType();
@@ -878,12 +885,12 @@ public class createXML {
         idenFisCed = xml.createIdentificativiFiscaliITType();
         idFisCed = xml.createIdFiscaleITType();
 
-        idenAltriCed = xml.createAltriDatiIdentificativiNoSedeType();
+        idenAltriCed = xml.createAltriDatiIdentificativiITType();
 
         indCedSede = xml.createIndirizzoType();
         indCedStabOrg = xml.createIndirizzoType();
         cedRappFis = xml.createRappresentanteFiscaleITType();
-        idFisCedRappFis = xml.createIdFiscaleITIvaType();
+        idFisCedRappFis = xml.createIdFiscaleITType();
 
     }
 
@@ -914,9 +921,9 @@ public class createXML {
         idenFisCess = xml.createIdentificativiFiscaliNoIVAType();
         idFisCess = xml.createIdFiscaleType();
 
-        idenAltriCess = xml.createAltriDatiIdentificativiNoCAPType();
+        idenAltriCess = xml.createAltriDatiIdentificativiType();
 
-        indCessSede = xml.createIndirizzoNoCAPType();
+        indCessSede = xml.createIndirizzoType();
         indCessStabOrg = xml.createIndirizzoType();
         cessRappFis = xml.createRappresentanteFiscaleType();
         idFisCessRappFis = xml.createIdFiscaleType();
@@ -939,7 +946,7 @@ public class createXML {
         dteCess.getDatiFatturaBodyDTE().add(datiFatBodyDTE);
 
         datiFatBodyDTE = xml.createDatiFatturaBodyDTEType();
-        datiGenDTE = xml.createDatiGeneraliType();
+        datiGenDTE = xml.createDatiGeneraliDTEType();
         datiIvaDTE = xml.createDatiIVAType();
         riepDTE = 0;
     }
@@ -982,9 +989,9 @@ public class createXML {
         idenFisCedDTR = xml.createIdentificativiFiscaliType();
         idFisCedDTR = xml.createIdFiscaleType();
 
-        idenAltriCedDTR = xml.createAltriDatiIdentificativiNoCAPType();
+        idenAltriCedDTR = xml.createAltriDatiIdentificativiType();
 
-        indCedSedeDTR = xml.createIndirizzoNoCAPType();
+        indCedSedeDTR = xml.createIndirizzoType();
         indCedStabOrgDTR = xml.createIndirizzoType();
         cedRappFisDTR = xml.createRappresentanteFiscaleType();
         idFisCedRappFisDTR = xml.createIdFiscaleType();
@@ -994,12 +1001,12 @@ public class createXML {
         idenFisCessDTR = xml.createIdentificativiFiscaliITType();
         idFisCessDTR = xml.createIdFiscaleITType();
 
-        idenAltriCessDTR = xml.createAltriDatiIdentificativiNoSedeType();
+        idenAltriCessDTR = xml.createAltriDatiIdentificativiITType();
 
         indCessSedeDTR = xml.createIndirizzoType();
         indCessStabOrgDTR = xml.createIndirizzoType();
         cessRappFisDTR = xml.createRappresentanteFiscaleITType();
-        idFisCessRappFisDTR = xml.createIdFiscaleITIvaType();
+        idFisCessRappFisDTR = xml.createIdFiscaleITType();
 
         datiFatBodyDTR = xml.createDatiFatturaBodyDTRType();
 
@@ -1034,12 +1041,12 @@ public class createXML {
         idenFisCessDTR = xml.createIdentificativiFiscaliITType();
         idFisCessDTR = xml.createIdFiscaleITType();
 
-        idenAltriCessDTR = xml.createAltriDatiIdentificativiNoSedeType();
+        idenAltriCessDTR = xml.createAltriDatiIdentificativiITType();
 
         indCessSedeDTR = xml.createIndirizzoType();
         indCessStabOrgDTR = xml.createIndirizzoType();
         cessRappFisDTR = xml.createRappresentanteFiscaleITType();
-        idFisCessRappFisDTR = xml.createIdFiscaleITIvaType();
+        idFisCessRappFisDTR = xml.createIdFiscaleITType();
 
     }
 
@@ -1070,9 +1077,9 @@ public class createXML {
         idenFisCedDTR = xml.createIdentificativiFiscaliType();
         idFisCedDTR = xml.createIdFiscaleType();
 
-        idenAltriCedDTR = xml.createAltriDatiIdentificativiNoCAPType();
+        idenAltriCedDTR = xml.createAltriDatiIdentificativiType();
 
-        indCedSedeDTR = xml.createIndirizzoNoCAPType();
+        indCedSedeDTR = xml.createIndirizzoType();
         indCedStabOrgDTR = xml.createIndirizzoType();
         cedRappFisDTR = xml.createRappresentanteFiscaleType();
         idFisCedRappFisDTR = xml.createIdFiscaleType();

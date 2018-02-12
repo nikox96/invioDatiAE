@@ -1,12 +1,12 @@
 //
-// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
+// Questo file e' stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.8-b130911.1802 
 // Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Qualsiasi modifica a questo file andra' persa durante la ricompilazione dello schema di origine. 
 // Generato il: 2018.02.12 alle 06:53:03 PM CET 
 //
 
 
-package inviodatiae;
+package inviodatiae.xsd;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -48,7 +48,7 @@ public class DatiIVAType {
     protected BigDecimal aliquota;
 
     /**
-     * Recupera il valore della proprietà imposta.
+     * Recupera il valore della proprietï¿½ imposta.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class DatiIVAType {
     }
 
     /**
-     * Imposta il valore della proprietà imposta.
+     * Imposta il valore della proprietï¿½ imposta.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class DatiIVAType {
     }
 
     /**
-     * Recupera il valore della proprietà aliquota.
+     * Recupera il valore della proprietï¿½ aliquota.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class DatiIVAType {
     }
 
     /**
-     * Imposta il valore della proprietà aliquota.
+     * Imposta il valore della proprietï¿½ aliquota.
      * 
      * @param value
      *     allowed object is
