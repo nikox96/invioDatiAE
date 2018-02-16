@@ -29,6 +29,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.xml.sax.SAXException;
 import inviodatiae.xsd.*;
 import java.awt.BorderLayout;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -367,6 +370,7 @@ public class createXML {
 
     private static int getXml(String s) throws JAXBException, FileNotFoundException, ParseException, DatatypeConfigurationException, IOException {
         String[] index;
+        DecimalFormat df =  new DecimalFormat("#.00");
 
         index = s.split(";");
         index[0] = index[0].replaceAll("\\s+", "");
@@ -507,6 +511,7 @@ public class createXML {
                     idFisCess.setIdCodice(index[1]);
                     break;
                 case "2.2.1.2":
+                    idFisCess = new IdFiscaleType();
                     idenFisCess.setCodiceFiscale(index[1]);
                     break;
                 case "2.2.2.1":
@@ -580,21 +585,21 @@ public class createXML {
                     break;
                 case "2.2.3.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiRiepilogoDTE.setImponibileImporto(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiRiepilogoDTE.setImponibileImporto(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "2.2.3.2.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTE.setImposta(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiIvaDTE.setImposta(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "2.2.3.2.2.2":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTE.setAliquota(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiIvaDTE.setAliquota(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "2.2.3.2.3":
                     datiRiepilogoDTE.setNatura(NaturaType.fromValue(index[1]));
                     break;
                 case "2.2.3.2.4":
-                    datiRiepilogoDTE.setDetraibile(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiRiepilogoDTE.setDetraibile(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "2.2.3.2.5":
                     datiRiepilogoDTE.setDeducibile(DeducibileType.fromValue(index[1]));
@@ -762,21 +767,21 @@ public class createXML {
                     break;
                 case "3.2.3.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiRiepilogoDTR.setImponibileImporto(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiRiepilogoDTR.setImponibileImporto(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "3.2.3.2.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTR.setImposta(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiIvaDTR.setImposta(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "3.2.3.2.2.2":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTR.setAliquota(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiIvaDTR.setAliquota(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "3.2.3.2.3":
                     datiRiepilogoDTR.setNatura(NaturaType.fromValue(index[1]));
                     break;
                 case "3.2.3.2.4":
-                    datiRiepilogoDTR.setDetraibile(BigDecimal.valueOf(Double.parseDouble(index[1])));
+                    datiRiepilogoDTR.setDetraibile(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
                     break;
                 case "3.2.3.2.5":
                     datiRiepilogoDTR.setDeducibile(DeducibileType.fromValue(index[1]));
@@ -825,6 +830,7 @@ public class createXML {
         }
 
         rootDTE.setDatiFatturaHeader(header);
+        rootDTE.setVersione(VersioneType.DAT_20);
 
         //contiene i dati per fatture emesse
         dte = xml.createDTEType();
@@ -912,7 +918,7 @@ public class createXML {
 
         dteCess.setAltriDatiIdentificativi(idenAltriCess);
         dteCess.setIdentificativiFiscali(idenFisCess);
-        dteCess.getDatiFatturaBodyDTE().add(datiFatBodyDTE);
+        //dteCess.getDatiFatturaBodyDTE().add(datiFatBodyDTE);
 
         dte.getCessionarioCommittenteDTE().add(dteCess);
 
@@ -963,7 +969,6 @@ public class createXML {
         datiFatBodyDTE.getDatiRiepilogo().add(datiRiepilogoDTE);
 
         datiRiepilogoDTE = xml.createDatiRiepilogoType();
-
         datiIvaDTE = xml.createDatiIVAType();
 
     }
