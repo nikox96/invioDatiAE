@@ -37,6 +37,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.xml.datatype.DatatypeConstants;
 
 /**
  * @since 28/09/2017
@@ -370,10 +371,11 @@ public class createXML {
 
     private static int getXml(String s) throws JAXBException, FileNotFoundException, ParseException, DatatypeConfigurationException, IOException {
         String[] index;
-        DecimalFormat df =  new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("######0.00");
 
         index = s.split(";");
         index[0] = index[0].replaceAll("\\s+", "");
+        index[1] = index[1].replaceAll("[^\\x00-\\xFF]", "");
         //System.out.println("lvl " + index[0]);
 
         if (Character.getNumericValue(index[0].charAt(0)) == 3 && dtePrinted == false) {
@@ -511,7 +513,6 @@ public class createXML {
                     idFisCess.setIdCodice(index[1]);
                     break;
                 case "2.2.1.2":
-                    idFisCess = new IdFiscaleType();
                     idenFisCess.setCodiceFiscale(index[1]);
                     break;
                 case "2.2.2.1":
@@ -585,21 +586,21 @@ public class createXML {
                     break;
                 case "2.2.3.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiRiepilogoDTE.setImponibileImporto(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiRiepilogoDTE.setImponibileImporto(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "2.2.3.2.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTE.setImposta(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiIvaDTE.setImposta(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "2.2.3.2.2.2":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTE.setAliquota(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiIvaDTE.setAliquota(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "2.2.3.2.3":
                     datiRiepilogoDTE.setNatura(NaturaType.fromValue(index[1]));
                     break;
                 case "2.2.3.2.4":
-                    datiRiepilogoDTE.setDetraibile(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiRiepilogoDTE.setDetraibile(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "2.2.3.2.5":
                     datiRiepilogoDTE.setDeducibile(DeducibileType.fromValue(index[1]));
@@ -767,21 +768,21 @@ public class createXML {
                     break;
                 case "3.2.3.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiRiepilogoDTR.setImponibileImporto(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiRiepilogoDTR.setImponibileImporto(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "3.2.3.2.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTR.setImposta(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiIvaDTR.setImposta(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "3.2.3.2.2.2":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTR.setAliquota(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiIvaDTR.setAliquota(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "3.2.3.2.3":
                     datiRiepilogoDTR.setNatura(NaturaType.fromValue(index[1]));
                     break;
                 case "3.2.3.2.4":
-                    datiRiepilogoDTR.setDetraibile(BigDecimal.valueOf(Double.parseDouble(df.format(Double.parseDouble(index[1])))));
+                    datiRiepilogoDTR.setDetraibile(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
                     break;
                 case "3.2.3.2.5":
                     datiRiepilogoDTR.setDeducibile(DeducibileType.fromValue(index[1]));
@@ -875,10 +876,14 @@ public class createXML {
 
         buildCessXml();
 
-        idenFisCed.setIdFiscaleIVA(idFisCed);
+        if (!("".equals(idFisCed.getIdCodice()) || idFisCed.getIdCodice() == null)) {
+            idenFisCed.setIdFiscaleIVA(idFisCed);
+        }
         idenAltriCed.setSede(indCedSede);
         idenAltriCed.setStabileOrganizzazione(indCedStabOrg);
-        cedRappFis.setIdFiscaleIVA(idFisCedRappFis);
+        if (!("".equals(idFisCedRappFis.getIdCodice()) || idFisCedRappFis.getIdCodice() == null)) {
+            cedRappFis.setIdFiscaleIVA(idFisCedRappFis);
+        }
         idenAltriCed.setRappresentanteFiscale(cedRappFis);
 
         dteCed.setAltriDatiIdentificativi(idenAltriCed);
@@ -910,10 +915,14 @@ public class createXML {
 
         buildFatturaBodyDTEXml();
 
-        idenFisCess.setIdFiscaleIVA(idFisCess);
+        if (!("".equals(idFisCess.getIdCodice()) || idFisCess.getIdCodice() == null)) {
+            idenFisCess.setIdFiscaleIVA(idFisCess);
+        }
         idenAltriCess.setSede(indCessSede);
         idenAltriCess.setStabileOrganizzazione(indCessStabOrg);
-        cessRappFis.setIdFiscaleIVA(idFisCessRappFis);
+        if (!("".equals(idFisCessRappFis.getIdCodice()) || idFisCessRappFis.getIdCodice() == null)) {
+            cessRappFis.setIdFiscaleIVA(idFisCessRappFis);
+        }
         idenAltriCess.setRappresentanteFiscale(cessRappFis);
 
         dteCess.setAltriDatiIdentificativi(idenAltriCess);
@@ -1030,10 +1039,14 @@ public class createXML {
 
         buildCedDTRXml();
 
-        idenFisCessDTR.setIdFiscaleIVA(idFisCessDTR);
+        if (!("".equals(idFisCessDTR.getIdCodice()) || idFisCessDTR.getIdCodice() == null)) {
+            idenFisCessDTR.setIdFiscaleIVA(idFisCessDTR);
+        }
         idenAltriCessDTR.setSede(indCessSedeDTR);
         idenAltriCessDTR.setStabileOrganizzazione(indCessStabOrgDTR);
-        cessRappFisDTR.setIdFiscaleIVA(idFisCessRappFisDTR);
+        if (!("".equals(idFisCessRappFisDTR.getIdCodice()) || idFisCessRappFisDTR.getIdCodice() == null)) {
+            cessRappFisDTR.setIdFiscaleIVA(idFisCessRappFisDTR);
+        }
         idenAltriCessDTR.setRappresentanteFiscale(cessRappFisDTR);
 
         dtrCess.setAltriDatiIdentificativi(idenAltriCessDTR);
@@ -1065,10 +1078,14 @@ public class createXML {
 
         buildFatturaBodyDTRXml();
 
-        idenFisCedDTR.setIdFiscaleIVA(idFisCedDTR);
+        if (!("".equals(idFisCedDTR.getIdCodice()) || idFisCedDTR.getIdCodice() == null)) {
+            idenFisCedDTR.setIdFiscaleIVA(idFisCedDTR);
+        }
         idenAltriCedDTR.setSede(indCedSedeDTR);
         idenAltriCedDTR.setStabileOrganizzazione(indCedStabOrgDTR);
-        cedRappFisDTR.setIdFiscaleIVA(idFisCedRappFisDTR);
+        if (!("".equals(idFisCedRappFisDTR.getIdCodice()) || idFisCedRappFisDTR.getIdCodice() == null)) {
+            cedRappFisDTR.setIdFiscaleIVA(idFisCedRappFisDTR);
+        }
         idenAltriCedDTR.setRappresentanteFiscale(cedRappFisDTR);
 
         dtrCed.setAltriDatiIdentificativi(idenAltriCedDTR);
@@ -1136,6 +1153,7 @@ public class createXML {
 
         cal.setTime(dob);
         XMLGregorianCalendar xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal).normalize();
+        xmlDate.setTimezone(DatatypeConstants.FIELD_UNDEFINED);
         //XMLGregorianCalendar xmlDate3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH), dob.getHours(), dob.getMinutes(), dob.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED);
         return xmlDate;
     }
