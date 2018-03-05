@@ -218,6 +218,13 @@ public class createXML {
             cf = JOptionPane.showInputDialog("Codice fiscale del dichiarante:");
             if (cf == null || "".equals(cf) || " ".equals(cf)) {
                 cf = "cfcfcfcfcfcfcfcf";
+            } else {
+                dic.setCodiceFiscale(cf);
+                int carica = Integer.parseInt(JOptionPane.showInputDialog("Codice carica: (valori ammessi tra 1 e 15)"));
+                while (carica < 1 || carica > 15) {
+                    carica = Integer.parseInt(JOptionPane.showInputDialog("Codice carica: (valori ammessi tra 1 e 15)"));
+                }
+                dic.setCarica(carica);
             }
 
             fr = new FileReader(jfc.getSelectedFile());
@@ -375,7 +382,9 @@ public class createXML {
 
         index = s.split(";");
         index[0] = index[0].replaceAll("\\s+", "");
-        index[1] = index[1].replaceAll("[^\\x00-\\xFF]", "");
+        if (index.length > 1) {
+            index[1] = index[1].replaceAll("[^\\x00-\\xFF]", "");
+        }
         //System.out.println("lvl " + index[0]);
 
         if (Character.getNumericValue(index[0].charAt(0)) == 3 && dtePrinted == false) {
@@ -424,10 +433,10 @@ public class createXML {
                     header.setProgressivoInvio(index[1]);
                     break;
                 case "1.2.1":
-                    dic.setCodiceFiscale(index[1]);
+                    //dic.setCodiceFiscale(index[1]);
                     break;
                 case "1.2.2":
-                    dic.setCarica(Integer.parseInt(index[1]));
+                    //dic.setCarica(Integer.parseInt(index[1]));
                     break;
                 case "1.3":
                     //v2.1 da non valorizzare header.setIdSistema(index[1]);
@@ -441,6 +450,7 @@ public class createXML {
                     idFisCed.setIdPaese(NazioneITType.valueOf(index[1]));
                     break;
                 case "2.1.1.1.2":
+                    cf = index[1];
                     idFisCed.setIdCodice(index[1]);
                     break;
                 case "2.1.1.2":
@@ -823,8 +833,12 @@ public class createXML {
 
         buildCedXml();
 
-        dte.setRettifica(rettDTE);
-        header.setDichiarante(dic);
+        if (!(rettDTE.getIdFile() == null || "".equals(rettDTE.getIdFile()))) {
+            dte.setRettifica(rettDTE);
+        }
+        if (!(dic.getCodiceFiscale() == null || "".equals(dic.getCodiceFiscale()))) {
+            header.setDichiarante(dic);
+        }
 
         if (dte != null) {
             rootDTE.setDTE(dte);
@@ -986,7 +1000,9 @@ public class createXML {
 
         buildCessDTRXml();
 
-        dtr.setRettifica(rettDTR);
+        if (!(rettDTR.getIdFile() == null || "".equals(rettDTR.getIdFile()))) {
+            dtr.setRettifica(rettDTR);
+        }
 
         if (dtr != null) {
             rootDTR.setDTR(dtr);
