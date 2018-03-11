@@ -1003,15 +1003,16 @@ public class createXML {
         if (!(rettDTR.getIdFile() == null || "".equals(rettDTR.getIdFile()))) {
             dtr.setRettifica(rettDTR);
         }
+        if (!(dic.getCodiceFiscale() == null || "".equals(dic.getCodiceFiscale()))) {
+            header.setDichiarante(dic);
+        }
 
         if (dtr != null) {
             rootDTR.setDTR(dtr);
         }
-        /*
-        header = xml.createDatiFatturaHeaderType();
-        //codice fiscale e carica dichiarante
-        dic = xml.createDichiaranteType();
-         */
+
+        rootDTR.setDatiFatturaHeader(header);
+        rootDTR.setVersione(VersioneType.DAT_20);
         //contiene i dati per fatture emesse
         dtr = xml.createDTRType();
         dtrCed = xml.createCedentePrestatoreDTRType();
