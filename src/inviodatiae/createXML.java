@@ -1107,7 +1107,6 @@ public class createXML {
 
         dtrCed.setAltriDatiIdentificativi(idenAltriCedDTR);
         dtrCed.setIdentificativiFiscali(idenFisCedDTR);
-        dtrCed.getDatiFatturaBodyDTR().add(datiFatBodyDTR);
 
         dtr.getCedentePrestatoreDTR().add(dtrCed);
 
@@ -1139,7 +1138,6 @@ public class createXML {
 
         datiFatBodyDTR.setDatiGenerali(datiGenDTR);
         dtrCed.getDatiFatturaBodyDTR().add(datiFatBodyDTR);
-
         datiFatBodyDTR = xml.createDatiFatturaBodyDTRType();
         datiGenDTR = xml.createDatiGeneraliDTRType();
         datiIvaDTR = xml.createDatiIVAType();
