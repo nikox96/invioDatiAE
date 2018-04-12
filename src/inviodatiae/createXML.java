@@ -30,8 +30,6 @@ import org.xml.sax.SAXException;
 import inviodatiae.xsd.*;
 import java.awt.BorderLayout;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Locale;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -193,6 +191,10 @@ public class createXML {
                 return;
             }
 
+            fTemp = new File(appdata + "\\ae_datiFatture");
+            if (!(fTemp.exists())) {
+                fTemp.mkdirs();
+            }
             fTemp = new File(appdata + "\\ae_datiFatture\\spesometro_err.log");
             if (!(fTemp.exists())) {
                 fTemp.createNewFile();
