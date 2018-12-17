@@ -29,6 +29,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.xml.sax.SAXException;
 import inviodatiae.xsd.*;
 import java.awt.BorderLayout;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.text.DecimalFormat;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -127,6 +129,8 @@ public class createXML {
     static Marshaller marshaller;
     static FileWriter fw;
     static String cf, appdata;
+    static BufferedWriter bwe = null;
+    static Date date = new Date();
 
     static int lvlCur, lvlPrev = 0, tipFatt, nprg, line, retCod, cessDTE, bodyDTE, riepDTE, cedDTR, bodyDTR, riepDTR;
 
@@ -160,8 +164,6 @@ public class createXML {
         cedDTR = 0;
         riepDTR = 0;
         bodyDTR = 0;
-
-        Date date = new Date();
         //SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         //Schema schema = schemaFactory.newSchema(new File("C:\\Users\\Nicolò\\Documents\\Dati fatture ae\\V2.0\\DatiFattura_v2.0.xsd"));
 
@@ -175,7 +177,7 @@ public class createXML {
         File fTemp;
         FileReader fr = null;
         fw = null;
-        BufferedWriter bwe = null;
+
         FileWriter fwe = null;
         JFileChooser jfc = new JFileChooser();
         JFrame jf = new JFrame("Conversione dati fatture in XML");
@@ -230,18 +232,20 @@ public class createXML {
             }
 
             fr = new FileReader(jfc.getSelectedFile());
-            br = new BufferedReader(fr);
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(jfc.getSelectedFile()), "Cp1252"));
 
             String sCurrentLine = br.readLine();
             while (sCurrentLine != null) {
                 // serialise to xml
                 line++;
+                bwe.write(sdf.format(date) + " >   " + "init-tratt @line: " + line + "\n");
+
                 retCod = getXml(sCurrentLine);
+
                 switch (retCod) {
                     case 1:
                         break;
                     default:
-                        bwe.write(sdf.format(date) + " >   " + "errore line: " + line + "\n");
                         bwe.write(sdf.format(date) + " >   " + "errore tipo: " + retCod + "\n");
                         break;
                 }
@@ -382,10 +386,15 @@ public class createXML {
         String[] index;
         DecimalFormat df = new DecimalFormat("######0.00");
 
+        bwe.write(sdf.format(date) + " >   before split: " + s + "\n");             //@debug
         index = s.split(";");
+        bwe.write(sdf.format(date) + " >   after split[0]: " + index[0] + "\n");    //@debug
         index[0] = index[0].replaceAll("\\s+", "");
+        bwe.write(sdf.format(date) + " >   after replace[0]: " + index[0] + "\n");  //@debug
         if (index.length > 1) {
-            index[1] = index[1].replaceAll("[^\\x00-\\xFF]", "");
+            bwe.write(sdf.format(date) + " >   after split[1]: " + index[1] + "\n");    //@debug
+            index[1] = index[1].replaceAll("[^a-zA-Z0-9- ]+", "");
+            bwe.write(sdf.format(date) + " >   after replace[1]: " + index[1] + "\n");          //@debug
         }
         //System.out.println("lvl " + index[0]);
 
@@ -598,21 +607,22 @@ public class createXML {
                     break;
                 case "2.2.3.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiRiepilogoDTE.setImponibileImporto(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    datiRiepilogoDTE.setImponibileImporto(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "2.2.3.2.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTE.setImposta(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    datiIvaDTE.setImposta(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "2.2.3.2.2.2":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTE.setAliquota(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    datiIvaDTE.setAliquota(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "2.2.3.2.3":
                     datiRiepilogoDTE.setNatura(NaturaType.fromValue(index[1]));
                     break;
                 case "2.2.3.2.4":
-                    datiRiepilogoDTE.setDetraibile(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    index[1] = index[1].replace(",", ".");
+                    datiRiepilogoDTE.setDetraibile(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "2.2.3.2.5":
                     datiRiepilogoDTE.setDeducibile(DeducibileType.fromValue(index[1]));
@@ -780,21 +790,22 @@ public class createXML {
                     break;
                 case "3.2.3.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiRiepilogoDTR.setImponibileImporto(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    datiRiepilogoDTR.setImponibileImporto(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "3.2.3.2.2.1":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTR.setImposta(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    datiIvaDTR.setImposta(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "3.2.3.2.2.2":
                     index[1] = index[1].replace(",", ".");
-                    datiIvaDTR.setAliquota(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    datiIvaDTR.setAliquota(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "3.2.3.2.3":
                     datiRiepilogoDTR.setNatura(NaturaType.fromValue(index[1]));
                     break;
                 case "3.2.3.2.4":
-                    datiRiepilogoDTR.setDetraibile(BigDecimal.valueOf((long) (Double.parseDouble(index[1]) * 100), 2));
+                    index[1] = index[1].replace(",", ".");
+                    datiRiepilogoDTR.setDetraibile(new BigDecimal(("0".equals(index[1]) ? "0.00" : index[1])));
                     break;
                 case "3.2.3.2.5":
                     datiRiepilogoDTR.setDeducibile(DeducibileType.fromValue(index[1]));
@@ -1165,12 +1176,15 @@ public class createXML {
     private static XMLGregorianCalendar getXMLGregorianCalendar(String date) throws ParseException, DatatypeConfigurationException {
         Date dob;
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("inviodatiae.createXML.getXMLGregorianCalendar() >> string " + date);
         dob = df.parse(date);
         GregorianCalendar cal = new GregorianCalendar();
 
+        System.out.println("inviodatiae.createXML.getXMLGregorianCalendar() >> date " + dob.toString());
         cal.setTime(dob);
-        XMLGregorianCalendar xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal).normalize();
+        XMLGregorianCalendar xmlDate = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
         xmlDate.setTimezone(DatatypeConstants.FIELD_UNDEFINED);
+        System.out.println("inviodatiae.createXML.getXMLGregorianCalendar() >> xmldate " + xmlDate.toXMLFormat());
         //XMLGregorianCalendar xmlDate3 = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH), dob.getHours(), dob.getMinutes(), dob.getSeconds(), DatatypeConstants.FIELD_UNDEFINED, DatatypeConstants.FIELD_UNDEFINED);
         return xmlDate;
     }
