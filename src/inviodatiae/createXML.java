@@ -240,7 +240,11 @@ public class createXML {
                 line++;
                 bwe.write(sdf.format(date) + " >   " + "init-tratt @line: " + line + "\n");
 
-                retCod = getXml(sCurrentLine);
+                try {
+                    retCod = getXml(sCurrentLine);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(jp, "Errore riga " + line + "\nValore riga: " + sCurrentLine + "\nEccezione sollevata: " + e.toString() + "\n", "Formato dato errato", JOptionPane.WARNING_MESSAGE);
+                }
 
                 switch (retCod) {
                     case 1:
