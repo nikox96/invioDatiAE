@@ -187,25 +187,6 @@ public class createXML {
         jf.setVisible(true);
 
         try {
-            appdata = System.getenv("AppData");
-            if ("".equals(appdata) || appdata == null) {
-                System.out.println("env var not defined!");
-                return;
-            }
-
-            fTemp = new File(appdata + "\\ae_datiFatture");
-            if (!(fTemp.exists())) {
-                fTemp.mkdirs();
-            }
-            fTemp = new File(appdata + "\\ae_datiFatture\\spesometro_err.log");
-            if (!(fTemp.exists())) {
-                fTemp.createNewFile();
-            }
-
-            fwe = new FileWriter(fTemp);
-
-            bwe = new BufferedWriter(fwe);
-
             jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             jfc.setDialogTitle("Scegli file da convertire in XML");
             jfc.setDialogType(JFileChooser.OPEN_DIALOG);
@@ -219,6 +200,24 @@ public class createXML {
                     System.exit(1);
                 }
             }
+            //appdata = System.getenv("AppData");
+            appdata = jfc.getSelectedFile().getParent();
+            if ("".equals(appdata) || appdata == null) {
+                System.out.println("env var not defined!");
+                return;
+            }
+
+            fTemp = new File(appdata + "\\ae_datiFatture");
+            if (!(fTemp.exists())) {
+                fTemp.mkdirs();
+            }
+            fTemp = new File(appdata + "\\ae_datiFatture\\spesometro_err.log");
+            if (!(fTemp.exists())) {
+                fTemp.createNewFile();
+            }
+            fwe = new FileWriter(fTemp);
+            bwe = new BufferedWriter(fwe);
+            
             cf = JOptionPane.showInputDialog("Codice fiscale del dichiarante:");
             if (cf == null || "".equals(cf) || " ".equals(cf)) {
                 cf = "cfcfcfcfcfcfcfcf";
