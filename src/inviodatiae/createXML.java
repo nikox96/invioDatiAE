@@ -41,7 +41,7 @@ import javax.xml.datatype.DatatypeConstants;
 
 /**
  * @since 28/09/2017
- * @version 1.0.0
+ * @version 2.0.0
  * @author Nicolò
  */
 public class createXML {
