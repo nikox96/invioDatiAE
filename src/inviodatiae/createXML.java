@@ -396,7 +396,7 @@ public class createXML {
         bwe.write(sdf.format(date) + " >   after replace[0]: " + index[0] + "\n");  //@debug
         if (index.length > 1) {
             bwe.write(sdf.format(date) + " >   after split[1]: " + index[1] + "\n");    //@debug
-            index[1] = index[1].replaceAll("[^a-zA-Z0-9- ]+", "");
+            index[1] = index[1].replaceAll("[^a-zA-Z0-9-. ]+", "");
             bwe.write(sdf.format(date) + " >   after replace[1]: " + index[1] + "\n");          //@debug
         }
         //System.out.println("lvl " + index[0]);
