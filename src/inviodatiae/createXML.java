@@ -217,7 +217,7 @@ public class createXML {
             }
             fwe = new FileWriter(fTemp);
             bwe = new BufferedWriter(fwe);
-            
+
             cf = JOptionPane.showInputDialog("Codice fiscale del dichiarante:");
             if (cf == null || "".equals(cf) || " ".equals(cf)) {
                 cf = "cfcfcfcfcfcfcfcf";
@@ -258,6 +258,22 @@ public class createXML {
             nprg += 1;
             fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
             switch (tipFatt) {
+                case 2:
+                    if (!(dtePrinted)) {
+                        buildDTEXml();
+                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+                        marshaller.marshal(rootDTE, fw);
+                        dtePrinted = true;
+                    }
+                    break;
+                case 3:
+                    if (!(dtrPrinted)) {
+                        buildDTRXml();
+                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+                        marshaller.marshal(rootDTR, fw);
+                        dtrPrinted = true;
+                    }
+                    break;
                 case 4:
                     if (ann != null) {
                         rootANN.setANN(ann);
@@ -401,14 +417,14 @@ public class createXML {
         }
         //System.out.println("lvl " + index[0]);
 
-        if (Character.getNumericValue(index[0].charAt(0)) == 3 && dtePrinted == false) {
+        if (Character.getNumericValue(index[0].charAt(0)) >= 3 && dtePrinted == false && tipFatt == 2) {
             buildDTEXml();
             nprg += 1;
             fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
             marshaller.marshal(rootDTE, fw);
             dtePrinted = true;
         }
-        if (Character.getNumericValue(index[0].charAt(0)) == 4 && dtrPrinted == false) {
+        if (Character.getNumericValue(index[0].charAt(0)) == 4 && dtrPrinted == false && tipFatt == 3) {
             buildDTRXml();
             nprg += 1;
             fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
