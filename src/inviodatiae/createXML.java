@@ -32,6 +32,7 @@ import java.awt.BorderLayout;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -157,7 +158,8 @@ public class createXML {
         rootDTE = xml.createDatiFatturaType();
         rootDTR = xml.createDatiFatturaType();
         rootANN = xml.createDatiFatturaType();
-        nprg = 0;
+        LocalDate now = LocalDate.now();
+        nprg = Integer.parseInt(now.getMonthValue() + "" + Integer.toString(now.getYear()).substring(2, 4) + "0");
         cessDTE = 0;
         riepDTE = 0;
         bodyDTE = 0;
@@ -256,12 +258,12 @@ public class createXML {
             }
 
             nprg += 1;
-            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
             switch (tipFatt) {
                 case 2:
                     if (!(dtePrinted)) {
                         buildDTEXml();
-                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
                         marshaller.marshal(rootDTE, fw);
                         dtePrinted = true;
                     }
@@ -269,7 +271,7 @@ public class createXML {
                 case 3:
                     if (!(dtrPrinted)) {
                         buildDTRXml();
-                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
                         marshaller.marshal(rootDTR, fw);
                         dtrPrinted = true;
                     }
@@ -420,14 +422,14 @@ public class createXML {
         if (Character.getNumericValue(index[0].charAt(0)) >= 3 && dtePrinted == false && tipFatt == 2) {
             buildDTEXml();
             nprg += 1;
-            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
             marshaller.marshal(rootDTE, fw);
             dtePrinted = true;
         }
         if (Character.getNumericValue(index[0].charAt(0)) == 4 && dtrPrinted == false && tipFatt == 3) {
             buildDTRXml();
             nprg += 1;
-            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + tipFatt + String.format("%04d", nprg) + ".xml");
+            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
             marshaller.marshal(rootDTR, fw);
             dtrPrinted = true;
         }
