@@ -23,10 +23,27 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
  *     &lt;enumeration value="N1"/>
  *     &lt;enumeration value="N2"/>
+ *     &lt;enumeration value="N2.1"/>
+ *     &lt;enumeration value="N2.2"/>
  *     &lt;enumeration value="N3"/>
+ *     &lt;enumeration value="N3.1"/>
+ *     &lt;enumeration value="N3.2"/>
+ *     &lt;enumeration value="N3.3"/>
+ *     &lt;enumeration value="N3.4"/>
+ *     &lt;enumeration value="N3.5"/>
+ *     &lt;enumeration value="N3.6"/>
  *     &lt;enumeration value="N4"/>
  *     &lt;enumeration value="N5"/>
  *     &lt;enumeration value="N6"/>
+ *     &lt;enumeration value="N6.1"/>
+ *     &lt;enumeration value="N6.2"/>
+ *     &lt;enumeration value="N6.3"/>
+ *     &lt;enumeration value="N6.4"/>
+ *     &lt;enumeration value="N6.5"/>
+ *     &lt;enumeration value="N6.6"/>
+ *     &lt;enumeration value="N6.7"/>
+ *     &lt;enumeration value="N6.8"/>
+ *     &lt;enumeration value="N6.9"/>
  *     &lt;enumeration value="N7"/>
  *   &lt;/restriction>
  * &lt;/simpleType>
@@ -51,6 +68,20 @@ public enum NaturaType {
      */
     @XmlEnumValue("N2")
     N_2("N2"),
+    
+    /**
+     * Non soggette ad IVA ai sensi degli artt. da 7 a 7-septies del DPR 633/72
+     * 
+     */
+    @XmlEnumValue("N2.1")
+    N_2_1("N2.1"),
+    
+    /**
+     * Non soggette - altri casi
+     * 
+     */
+    @XmlEnumValue("N2.2")
+    N_2_2("N2.2"),
 
     /**
      * Non Imponibili
@@ -58,6 +89,49 @@ public enum NaturaType {
      */
     @XmlEnumValue("N3")
     N_3("N3"),
+    
+    /**
+     * Non Imponibili - esportazioni
+     * 
+     */
+    @XmlEnumValue("N3.1")
+    N_3_1("N3.1"),
+    
+    /**
+     * Non Imponibili - cessioni intracomunitarie
+     * 
+     */
+    @XmlEnumValue("N3.2")
+    N_3_2("N3.2"),
+    
+    /**
+     * Non Imponibili - cessioni verso San Marino
+     * 
+     */
+    @XmlEnumValue("N3.3")
+    N_3_3("N3.3"),
+    
+    /**
+     * Non Imponibili - operazioni assimilate alle cessioni all�esportazione
+     * 
+     */
+    @XmlEnumValue("N3.4")
+    N_3_4("N3.4"),
+    
+    /**
+     * Non Imponibili - a seguito di dichiarazioni d�intento
+     * 
+     */
+    @XmlEnumValue("N3.5")
+    N_3_5("N3.5"),
+    
+    /**
+     * Non Imponibili - altre operazioni che non 
+     * concorrono alla formazione del plafond
+     * 
+     */
+    @XmlEnumValue("N3.6")
+    N_3_6("N3.6"),
 
     /**
      * Esenti
@@ -67,7 +141,7 @@ public enum NaturaType {
     N_4("N4"),
 
     /**
-     * Regime del margine
+     * Regime del margine/IVA non esposta in fattura
      * 
      */
     @XmlEnumValue("N5")
@@ -79,13 +153,75 @@ public enum NaturaType {
      */
     @XmlEnumValue("N6")
     N_6("N6"),
+    
+    /**
+     * inversione contabile – cessione di rottami e altri materiali di recupero
+     * 
+     */
+    @XmlEnumValue("N6.1")
+    N_6_1("N6.1"),
+    
+    /**
+     * inversione contabile – cessione di oro e argento puro
+     * 
+     */
+    @XmlEnumValue("N6.2")
+    N_6_2("N6.2"),
+    
+    /**
+     * inversione contabile – subappalto nel settore edile
+     * 
+     */
+    @XmlEnumValue("N6.3")
+    N_6_3("N6.3"),
+    
+    /**
+     * inversione contabile – cessione di fabbricati
+     * 
+     */
+    @XmlEnumValue("N6.4")
+    N_6_4("N6.4"),
+    
+    /**
+     * inversione contabile – cessione di telefoni cellulari
+     * 
+     */
+    @XmlEnumValue("N6.5")
+    N_6_5("N6.5"),
+    
+    /**
+     * Iinversione contabile – cessione di prodotti elettronici
+     * 
+     */
+    @XmlEnumValue("N6.6")
+    N_6_6("N6.6"),
+    
+    /**
+     * inversione contabile – prestazioni comparto edile e settori connessi
+     * 
+     */
+    @XmlEnumValue("N6.7")
+    N_6_7("N6.7"),
+    
+    /**
+     * inversione contabile – operazioni settore energetico
+     * 
+     */
+    @XmlEnumValue("N6.8")
+    N_6_8("N6.8"),
+    
+    /**
+     * inversione contabile – altri casi
+     * 
+     */
+    @XmlEnumValue("N6.9")
+    N_6_9("N6.9"),
 
     /**
-     *  IVA assolta in altro stato UE
-     * 	                                      (vendite a distanza ex art. 40 c. 3 e 4 e art. 41 c. 1 lett. b,  DL 331/93; 
-     * 	                                       prestazione di servizi di telecomunicazioni, tele-radiodiffusione ed elettronici 
-     * 	                                       ex art. 7-sexies lett. f, g, art. 74-sexies DPR 633/72)
-     *                        
+     * IVA assolta in altro stato UE
+     * (vendite a distanza ex art. 40 c. 3 e 4 e art. 41 c. 1 lett. b,  DL 331/93; 
+     * prestazione di servizi di telecomunicazioni, tele-radiodiffusione ed elettronici 
+     * ex art. 7-sexies lett. f, g, art. 74-sexies DPR 633/72)                       
      * 
      */
     @XmlEnumValue("N7")
