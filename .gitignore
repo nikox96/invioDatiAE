@@ -1,3 +1,5 @@
 *.exe
 *.jar
+*.class
 dist/README.TXT
+/dist/
