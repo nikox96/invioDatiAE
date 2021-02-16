@@ -225,10 +225,10 @@ public class createXML {
                 cf = "cfcfcfcfcfcfcfcf";
             } else {
                 dic.setCodiceFiscale(cf);
-                int carica = Integer.parseInt(JOptionPane.showInputDialog("Codice carica: (valori ammessi tra 1 e 15)"));
-                while (carica < 1 || carica > 15) {
-                    carica = Integer.parseInt(JOptionPane.showInputDialog("Codice carica: (valori ammessi tra 1 e 15)"));
-                }
+                int carica;
+                do{
+                     carica = Integer.parseInt(JOptionPane.showInputDialog("Codice carica: (valori ammessi tra 1 e 15)"));
+                }while (carica < 1 || carica > 15);
                 dic.setCarica(carica);
             }
 
@@ -258,7 +258,7 @@ public class createXML {
             }
 
             nprg += 1;
-            fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
+            //fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
             switch (tipFatt) {
                 case 2:
                     if (!(dtePrinted)) {
@@ -281,6 +281,7 @@ public class createXML {
                         rootANN.setANN(ann);
                         header.setDichiarante(dic);
                         rootANN.setDatiFatturaHeader(header);
+                        fw = new FileWriter(appdata + "\\ae_datiFatture\\IT" + cf.trim() + "_DF_" + String.format("%05d", nprg) + ".xml");
                         marshaller.marshal(rootANN, fw);
                     }
                     break;
